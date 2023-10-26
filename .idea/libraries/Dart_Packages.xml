@@ -58,10 +58,17 @@
             </list>
           </value>
         </entry>
+        <entry key="buffer">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/buffer-1.2.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="centrifuge">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/centrifuge-0.10.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/centrifuge-0.11.0/lib" />
             </list>
           </value>
         </entry>
@@ -131,7 +138,7 @@
         <entry key="eip1559">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/eip1559-0.6.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/eip1559-0.6.2/lib" />
             </list>
           </value>
         </entry>
@@ -139,6 +146,20 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/eip55-1.0.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="equatable">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/equatable-2.0.5/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="eth_sig_util">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/eth_sig_util-0.0.9/lib" />
             </list>
           </value>
         </entry>
@@ -173,7 +194,7 @@
         <entry key="fuse_wallet_sdk">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/fuse_wallet_sdk-0.1.2/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/fuse_wallet_sdk-0.2.4/lib" />
             </list>
           </value>
         </entry>
@@ -194,7 +215,7 @@
         <entry key="http">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/http-0.13.6/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -320,7 +341,7 @@
         <entry key="protobuf">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/protobuf-2.1.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/protobuf-3.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -394,6 +415,13 @@
             </list>
           </value>
         </entry>
+        <entry key="sprintf">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/sprintf-7.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="stack_trace">
           <value>
             <list>
@@ -457,10 +485,17 @@
             </list>
           </value>
         </entry>
+        <entry key="userop">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/userop-0.0.12/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="uuid">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-3.0.7/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-4.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -488,7 +523,7 @@
         <entry key="web3dart">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/web3dart-2.6.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/web3dart-2.7.2/lib" />
             </list>
           </value>
         </entry>
@@ -524,7 +559,8 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/bip39-1.0.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/bs58check-1.0.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/centrifuge-0.10.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/buffer-1.2.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/centrifuge-0.11.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/clock-1.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.18.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/compute-1.0.2/lib" />
@@ -534,16 +570,18 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/data_channel-2.0.0+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/decimal-2.3.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/dio-5.3.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/eip1559-0.6.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/eip1559-0.6.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/eip55-1.0.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/equatable-2.0.5/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/eth_sig_util-0.0.9/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/file-7.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fixnum-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fuse_wallet_sdk-0.1.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fuse_wallet_sdk-0.2.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/glob-2.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/hex-0.2.0/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-0.13.6/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_multi_server-3.2.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/intl-0.18.1/lib" />
@@ -561,7 +599,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.8.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pointycastle-3.7.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pool-1.5.1/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/protobuf-2.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/protobuf-3.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pub_semver-2.1.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/rational-2.2.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sec-1.1.0/lib" />
@@ -572,6 +610,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_map_stack_trace-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_maps-0.10.12/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sprintf-7.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_channel-2.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_transform-2.1.0/lib" />
@@ -581,11 +620,12 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.6.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_core-0.5.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-3.0.7/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/userop-0.0.12/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/uuid-4.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vm_service-11.9.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/wallet-0.0.12+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/watcher-1.1.0/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/web3dart-2.6.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/web3dart-2.7.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/webkit_inspection_protocol-1.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/yaml-3.1.2/lib" />

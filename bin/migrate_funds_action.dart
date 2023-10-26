@@ -26,7 +26,7 @@ class MigrateFundsAction {
     final collectibles = await _getCollectibles();
 
     if (collectibles.isEmpty) {
-      print("User does not have any collectibles.");
+      print("Wallet does not have any collectibles.");
       return;
     }
 
@@ -75,10 +75,10 @@ class MigrateFundsAction {
   Future<List<Collectible>> _getCollectibles() async {
     print("Getting collectibles...");
 
-    final nftSection = fuseWalletSDK.nftModule;
+    final nftModule = fuseWalletSDK.nftModule;
 
     final exceptionOrCollectibles =
-        await nftSection.getCollectiblesByOwner(from);
+        await nftModule.getCollectiblesByOwner(from);
 
     if (exceptionOrCollectibles.hasError) {
       print("An error occurred while getting collectibles.");
@@ -86,8 +86,13 @@ class MigrateFundsAction {
     }
 
     final account = exceptionOrCollectibles.data!;
-    return account.collectibles
-      ..removeWhere((el) => el.collection.name.contains('Bound'));
+    final collectibles = account.collectibles;
+
+    collectibles.removeWhere((collectible) {
+      return collectible.collection.name.contains('Bound');
+    });
+
+    return collectibles;
   }
 
   Future<void> _transferERC20Tokens() async {
@@ -187,8 +192,9 @@ class MigrateFundsAction {
     return tokenList.result;
   }
 
-  bool _onTransactionSucceeded(element) =>
-      element.name == "transactionSucceeded";
+  bool _onTransactionSucceeded(element) {
+    return element.name == "transactionSucceeded";
+  }
 
   Token _toToken(ERC20 erc20Token) {
     return Token(

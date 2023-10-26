@@ -1,62 +1,107 @@
+import 'dart:io';
+
+import 'package:args/args.dart';
 import 'package:fuse_wallet_sdk/fuse_wallet_sdk.dart';
 
 import 'migrate_funds_action.dart';
 
 void main(List<String> arguments) async {
-  final publicKey = "add a public key";
+  final argResults = _parseArgs(arguments);
+  final privateKey = argResults["privateKey"] as String;
+  String? toWalletAddress = argResults["toWalletAddress"];
 
-  // Megatron and Shakespeare are just names
-  // to make it easier to identify wallets.
+  // TODO: Add your public key.
+  final publicKey = "";
 
-  final walletMegatronPrivateKey =
-      "Add a private key here";
-  final megatronWalletAddress = "Add a wallet address";
-
-  final shakespearePrivateKey =
-      "Add a private key here";
-  final shakespeareWalletAddress = "Add a wallet address";
-
-  final megatronCredentials = EthPrivateKey.fromHex(walletMegatronPrivateKey);
-  final shakespeareCredentials = EthPrivateKey.fromHex(shakespearePrivateKey);
-
-  final fuseWalletSDK = FuseWalletSDK(publicKey);
-  final exceptionOrJWT = await fuseWalletSDK.authenticate(megatronCredentials);
-
-  if (exceptionOrJWT.hasError) {
-    print("An error occurred while authenticating.");
-    return;
+  if (publicKey.isEmpty) {
+    print("Public key is not provided.");
+    exit(0);
   }
 
-  final exceptionOrWallet = await fuseWalletSDK.fetchWallet();
+  final credentials = EthPrivateKey.fromHex(privateKey);
 
-  if (exceptionOrWallet.hasError) {
-    print("An error occurred while getting wallet.");
-    return;
-  }
-
-  final migrateFundsAction = MigrateFundsAction(
-    fuseWalletSDK: fuseWalletSDK,
-    from: shakespeareWalletAddress,
-    to: megatronWalletAddress,
-    credentials: shakespeareCredentials,
+  toWalletAddress ??= await _getAccountAbstractionWalletAddress(
+    publicKey,
+    credentials,
+    toWalletAddress,
   );
 
-  migrateFundsAction.execute();
+  final oldFuseWalletSDK = FuseWalletSDK(publicKey);
+  final fromWalletAddress =
+      await _getFromWalletAddress(oldFuseWalletSDK, credentials);
+
+  final migrateFundsAction = MigrateFundsAction(
+    fuseWalletSDK: oldFuseWalletSDK,
+    from: fromWalletAddress,
+    to: toWalletAddress,
+    credentials: credentials,
+  );
+
+  try {
+    await migrateFundsAction.execute();
+    print("New wallet address: $toWalletAddress");
+    exit(1);
+  } catch (exception) {
+    print("An error occurred: ${exception.toString()}");
+    exit(0);
+  }
 }
 
-void _onSmartWalletEvent(SmartWalletEvent event) {
-  switch (event.name) {
-    case "smartWalletCreationStarted":
-      print('smartWalletCreationStarted ${event.data.toString()}');
-      break;
-    case "transactionHash":
-      print('transactionHash ${event.data.toString()}');
-      break;
-    case "smartWalletCreationSucceeded":
-      print('smartWalletCreationSucceeded ${event.data.toString()}');
-      break;
-    case "smartWalletCreationFailed":
-      print('smartWalletCreationFailed ${event.data.toString()}');
-      break;
+ArgResults _parseArgs(List<String> arguments) {
+  final parser = ArgParser();
+  parser.addOption("privateKey", mandatory: true);
+  parser.addOption("toWalletAddress");
+  return parser.parse(arguments);
+}
+
+Future<String> _getAccountAbstractionWalletAddress(
+  String publicKey,
+  EthPrivateKey credentials,
+  String? toWalletAddress,
+) async {
+  print(
+    "The toWalletAddress is not provided in the args. "
+    "Getting it by initializing the new AA SDK.",
+  );
+
+  final fuseSDK = await FuseSDK.init(publicKey, credentials);
+
+  // The new Account Abstraction wallet address.
+  toWalletAddress = fuseSDK.wallet.getSender();
+
+  return toWalletAddress;
+}
+
+Future<String> _getFromWalletAddress(
+  FuseWalletSDK oldFuseWalletSDK,
+  EthPrivateKey credentials,
+) async {
+  await _authenticateIntoTheOldSDK(oldFuseWalletSDK, credentials);
+  final exceptionOrOldWallet = await oldFuseWalletSDK.fetchWallet();
+
+  if (exceptionOrOldWallet.hasError) {
+    print("An error occurred while getting the old wallet.");
+    exit(0);
+  }
+
+  final fromWalletAddress = exceptionOrOldWallet.data?.smartWalletAddress;
+
+  if (fromWalletAddress == null) {
+    print("Failed to migrate funds. fromWalletAddress is null.");
+    exit(0);
+  }
+
+  return fromWalletAddress;
+}
+
+Future<void> _authenticateIntoTheOldSDK(
+  FuseWalletSDK oldFuseWalletSDK,
+  EthPrivateKey credentials,
+) async {
+  final exceptionOrJWT = await oldFuseWalletSDK.authenticate(credentials);
+
+  if (exceptionOrJWT.hasError) {
+    print("An error occurred while authenticating into the old SDK.");
+    exit(0);
   }
 }

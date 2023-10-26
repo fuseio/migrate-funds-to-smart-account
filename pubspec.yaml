@@ -8,16 +8,12 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  fuse_wallet_sdk: ^0.1.2
-#  fuse_wallet_sdk:
-#    git:
-#      url: https://github.com/fuseio/fuse_wallet_sdk.git
-#      ref: feat/erc-4337
-  # path: ^1.8.0
+  fuse_wallet_sdk: ^0.2.4
   intl: ^0.18.0
   decimal: ^2.3.2
   collection: ^1.17.0
   dio: ^5.3.2
+  args: ^2.4.2
 
 dev_dependencies:
   lints: ^2.0.0
